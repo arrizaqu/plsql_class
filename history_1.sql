@@ -110,3 +110,22 @@ end get_data;
 
 SET SERVEROUTPUT ON;
 execute get_data(103);
+
+-- CREATE IN OUT MODE 
+CREATE OR REPLACE PROCEDURE get_min(p_value IN OUT NUMBER)
+IS
+BEGIN
+  SELECT MIN(SALARY) INTO p_value FROM EMPLOYEES 
+              WHERE employee_id = p_value;
+  p_value := p_value + 40000;
+END get_min;
+
+set serveroutput on;
+DECLARE 
+  v_res NUMBER := 103;
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('input : ' || v_res);
+  get_min(v_res);
+  DBMS_OUTPUT.PUT_LINE('output : ' || v_res);
+END;
+/
