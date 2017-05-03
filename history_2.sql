@@ -89,3 +89,42 @@ END;
 -- CHECK TABLE DEPARTMENT and HISTORY_DEPT
 select * from departments where department_id = 
 select * from history_dept;
+
+-- CREATE FUNCTION 
+-- PERBEDAAN ANTARA PROCEDURE DAN FUNCTION 
+  * PROCEDURE => ACTION
+  * FUNCTION => RETURN VALUE 
+  
+-- PLSQL BLOCK
+    -- DECLARE
+    -- BEGIN
+    -- END
+-- PROCEDURE 
+    -- CREATE OR REPLACE PROCEDURE
+    -- IS / AS
+    -- BEGIN
+    -- END
+-- FUNCTION
+    -- CREATE OR REPLACE FUNCTION
+    -- RETURN DATAYPE 
+    -- IS
+    -- BEGIN
+    -- RETURN
+    -- END;
+
+-- HELLO WORLD
+CREATE OR REPLACE FUNCTION hallo_fun
+RETURN VARCHAR2 IS
+BEGIN
+  RETURN 'HALLO WORLD FUNCTION PLSQL';
+END;
+/
+
+
+SET SERVEROUTPUT ON;
+EXECUTE DBMS_OUTPUT.PUT_LINE('TEXT : ' || hallo_fun);
+
+-- HOST VARIABLE 
+VARIABLE text VARCHAR2; 
+execute :text := hallo_fun;
+print textS;
