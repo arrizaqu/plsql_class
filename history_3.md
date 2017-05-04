@@ -93,3 +93,15 @@
 		/
 		set serveroutput on;
 		execute dbms_output.put_line(get_rs(5));
+
+## %ROWTYPE 
+	set serveroutput on;
+	DECLARE
+	  v_data hr.employees%ROWTYPE;
+	BEGIN
+	  select * into v_data from employees 
+						  where employee_id = 103;
+	  dbms_output.put_line('full name : ' || v_data.first_name 
+									  || ' ' || v_data.last_name);
+	END;
+	/
