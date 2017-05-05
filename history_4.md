@@ -35,4 +35,12 @@
   
 ## Tugas 3 : 
 	custome definition procedure "history_emps_prc" dengan proses update 
- 
+	* update field "hire_date" dibuat dengan tanggal sekarang.
+	* contoh :
+		* Select = source.
+		* source : 
+			employee_id first_name hire_date 		salary
+				1			aldi	21-Jun-2016			5000
+		* target : 
+			employee_id first_name hire_date 	salary 
+				1 			aldi	5-Mei-2017	8000
